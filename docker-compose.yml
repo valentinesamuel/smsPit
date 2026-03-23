@@ -1,0 +1,26 @@
+services:
+  smspit:
+    # image: valentinesamuel/smspit:latest
+    build: .
+    ports:
+      - "4300:4300"
+      - "4301:4301"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - smspit_data:/data
+    environment:
+      - DATABASE_URL=sqlite:/data/db.sqlite
+      - NODE_ENV=production
+      - MAX_MESSAGES=1000
+      - AUTO_DELETE_AFTER=24h
+      - PURGE_INTERVAL=1h
+      - OTP_DETECTION=true
+      - AUTO_TAG=true
+      # Uncomment to enable API key auth:
+      - API_KEY=your-secret-key
+      # Uncomment to enable webhooks:
+      - WEBHOOK_URL=http://host.docker.internal:3100/smspit/webhook
+      - WEBHOOK_MAX_RETRIES=2
+volumes:
+  smspit_data:
