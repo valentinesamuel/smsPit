@@ -7,6 +7,32 @@
 
 ---
 
+## Screenshots
+
+### Inbox & dashboard
+
+OTP codes are auto-detected and shown with one-click copy, alongside live stats.
+
+![SMSpit inbox showing a received OTP message and the dashboard](images/inbox.png)
+
+### Send a test message
+
+![Send Test Message dialog](images/send-message.png)
+
+### Dead letters
+
+Inspect failed webhook deliveries, view the payload, and retry.
+
+![Dead letters page with webhook failure detail and retry button](images/dead-letters.png)
+
+### Query runner
+
+Run SQL directly against messages, projects and dead letters.
+
+![Query runner executing a SELECT against the messages table](images/query-runner.png)
+
+---
+
 ## Why SMSpit
 
 - **Real carriers are slow and expensive in tests.** Twilio/Vonage add real latency, cost money per message, and rate-limit CI pipelines.

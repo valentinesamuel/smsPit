@@ -18,7 +18,7 @@ services:
       - OTP_DETECTION=true
       - AUTO_TAG=true
       # Uncomment to enable API key auth:
-      - API_KEY=your-secret-key
+      # - API_KEY=your-secret-key
       # Uncomment to enable webhooks:
       - WEBHOOK_URL=http://host.docker.internal:3100/smspit/webhook
       - WEBHOOK_MAX_RETRIES=2
